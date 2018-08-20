@@ -6,7 +6,6 @@ import BurgerIngridient from "./BurgerIngridients/BurgerIngridient";
 const burger = props => {
   let transformedIngridients = Object.keys(props.ingridients)
     .map(igKey => {
-      console.log(props.ingridients[igKey]);
       return [...Array(props.ingridients[igKey])].map((_, i) => (
         <BurgerIngridient key={igKey + i} type={igKey} />
       ));
@@ -18,7 +17,7 @@ const burger = props => {
   if (!transformedIngridients.length) {
     transformedIngridients = <p>Please start adding ingridients</p>;
   }
-  console.log(transformedIngridients);
+
   return (
     <div className={styles.Burger}>
       <BurgerIngridient type="bread-top" />
